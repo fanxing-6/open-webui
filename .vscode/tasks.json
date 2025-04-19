@@ -1,0 +1,56 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "启动前端",
+            "type": "shell",
+            "command": "npm run dev",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "echo": true,
+                "focus": true,
+                "clear": false,
+                "showReuseMessage": false
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "启动后端",
+            "type": "shell",
+            "command": "${workspaceFolder}\\backend\\start_windows.bat",
+            "options": {
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/c"]
+                }
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "echo": true,
+                "focus": true,
+                "clear": false,
+                "showReuseMessage": false
+            }
+        },
+        {
+            "label": "启动 Open WebUI (前端 + 后端)",
+            "dependsOn": ["启动后端", "启动前端"],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "echo": true,
+                "focus": true,
+                "clear": false,
+                "showReuseMessage": false
+            }
+        }
+    ]
+} 
