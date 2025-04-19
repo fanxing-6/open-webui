@@ -83,7 +83,7 @@
 		>
 			<div>
 				<div class=" capitalize line-clamp-1" in:fade={{ duration: 200 }}>
-					你好，欢迎使用昇思助手
+					你好，{$user?.name ?? ''}
 				</div>
 
 				<div in:fade={{ duration: 200, delay: 200 }}>
