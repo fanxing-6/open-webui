@@ -91,7 +91,7 @@
 <div class="m-auto w-full max-w-6xl px-2 @2xl:px-20 translate-y-6 py-24 text-center">
 	{#if $temporaryChatEnabled}
 		<Tooltip
-			content={$i18n.t('This chat won’t appear in history and your messages will not be saved.')}
+			content={$i18n.t('This chat won\'t appear in history and your messages will not be saved.')}
 			className="w-full flex justify-center mb-0.5"
 			placement="top"
 		>
@@ -137,11 +137,7 @@
 				</div>
 
 				<div class=" text-3xl @sm:text-4xl line-clamp-1" in:fade={{ duration: 100 }}>
-					{#if models[selectedModelIdx]?.name}
-						{models[selectedModelIdx]?.name}
-					{:else}
-						{$i18n.t('Hello, {{name}}', { name: $user?.name })}
-					{/if}
+					你好，欢迎使用昇思助手
 				</div>
 			</div>
 

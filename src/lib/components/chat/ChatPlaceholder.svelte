@@ -68,7 +68,7 @@
 
 		{#if $temporaryChatEnabled}
 			<Tooltip
-				content={$i18n.t('This chat won’t appear in history and your messages will not be saved.')}
+				content={$i18n.t('This chat won\'t appear in history and your messages will not be saved.')}
 				className="w-full flex justify-center mb-0.5"
 				placement="top"
 			>
@@ -83,11 +83,7 @@
 		>
 			<div>
 				<div class=" capitalize line-clamp-1" in:fade={{ duration: 200 }}>
-					{#if models[selectedModelIdx]?.name}
-						{models[selectedModelIdx]?.name}
-					{:else}
-						{$i18n.t('Hello, {{name}}', { name: $user?.name })}
-					{/if}
+					你好，欢迎使用昇思助手
 				</div>
 
 				<div in:fade={{ duration: 200, delay: 200 }}>
