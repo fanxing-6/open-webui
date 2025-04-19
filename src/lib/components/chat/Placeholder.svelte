@@ -42,6 +42,26 @@
 
 	let models = [];
 
+	// 根据当前时间获取问候语
+	function getGreeting() {
+		const hour = new Date().getHours();
+		let greeting = '';
+		
+		if (hour >= 5 && hour < 12) {
+			greeting = '早上好';
+		} else if (hour >= 12 && hour < 14) {
+			greeting = '中午好';
+		} else if (hour >= 14 && hour < 18) {
+			greeting = '下午好';
+		} else if (hour >= 18 && hour < 23) {
+			greeting = '晚上好';
+		} else {
+			greeting = '夜深了';
+		}
+		
+		return greeting;
+	}
+
 	const selectSuggestionPrompt = async (p) => {
 		let text = p;
 
@@ -107,7 +127,7 @@
 		<div class="w-full flex flex-col justify-center items-center">
 			<div class="flex flex-row justify-center gap-3 @sm:gap-3.5 w-fit px-5">
 				<div class=" text-3xl @sm:text-4xl line-clamp-1" in:fade={{ duration: 100 }}>
-					你好，{$user?.name ?? ''}
+					{getGreeting()}，{$user?.name ?? ''}
 				</div>
 			</div>
 
