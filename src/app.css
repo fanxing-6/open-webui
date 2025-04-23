@@ -1,25 +1,15 @@
 @reference "./tailwind.css";
 
-/* 浅色模式背景色 */
-:root {
-	--color-gray-50: #f5f6f8 !important;
-	--color-gray-100: #f5f6f8 !important;
+/* Core Theme Variable Overrides */
+:root:not(.dark) {
+	--color-gray-50: #f5f6f8; 
+	--color-white: #f5f6f8;
 }
 
-html:not(.dark) {
-	background-color: #f5f6f8 !important;
-} 
-
-html:not(.dark) body {
-
-	background-color: #f5f6f8 !important;
-}
-
-/* 深色模式文本颜色 */
-html.dark, .dark {
-	--color-gray-200: #add8e6 !important;
-	--color-gray-300: #add8e6 !important;
-	color: #add8e6 !important; /* 直接设置文本颜色 */
+:root.dark {
+	--color-gray-50: #4c79ff; /* Dark mode primary text */
+	--color-gray-100: #4f7bff; /* Dark mode secondary text */
+	
 }
 
 @font-face {
@@ -49,6 +39,17 @@ html.dark, .dark {
 html {
 	word-break: break-word;
 }
+
+/* 浅色模式背景色 */
+/* html:not(.dark) {
+	background-color: #f5f6f8 !important;
+} */
+
+/* 暗色模式文本颜色 - 浅蓝色 */
+/* html.dark, 
+body.dark {
+	color: #7eb6ff !important;
+} */
 
 code {
 	/* white-space-collapse: preserve !important; */
