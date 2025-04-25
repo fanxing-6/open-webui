@@ -20,6 +20,20 @@
             }
         },
         {
+            "label": "启动前端 (Linux)",
+            "type": "shell",
+            "command": ". /root/.nvm/nvm.sh && npm run dev",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "echo": true,
+                "focus": true,
+                "clear": false,
+                "showReuseMessage": false
+            }
+        },
+        {
             "label": "启动后端",
             "type": "shell",
             "command": "${workspaceFolder}\\backend\\start_windows.bat",
@@ -40,8 +54,42 @@
             }
         },
         {
-            "label": "启动 Open WebUI (前端 + 后端)",
+            "label": "启动后端 (Linux)",
+            "type": "shell",
+            "command": "/root/anaconda3/envs/open-webui/bin/python -m uvicorn open_webui.main:app --port 8080 --host 0.0.0.0 --forwarded-allow-ips '*' --reload",
+            "options": {
+                "cwd": "${workspaceFolder}/backend",
+                "shell": {
+                    "executable": "bash",
+                    "args": ["-l", "-c"]
+                }
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "echo": true,
+                "focus": true,
+                "clear": false,
+                "showReuseMessage": false
+            }
+        },
+        {
+            "label": "启动 Open WebUI (前端 + 后端 Windows)",
             "dependsOn": ["启动后端", "启动前端"],
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "echo": true,
+                "focus": true,
+                "clear": false,
+                "showReuseMessage": false
+            }
+        },
+        {
+            "label": "启动 Open WebUI (前端 + 后端 Linux)",
+            "dependsOn": ["启动后端 (Linux)", "启动前端 (Linux)"],
             "problemMatcher": [],
             "presentation": {
                 "reveal": "always",
